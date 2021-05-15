@@ -1,0 +1,41 @@
+{
+  "name": "js-starter-kit",
+  "version": "1.0.0",
+  "description": "JavaScript Development Environment",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "babel-node ./build/startMessage.js",
+    "start": "babel-node ./build/server.js",
+    "localtunnel": "lt --port 3000",
+    "share": "npm-run-all --parallel start localtunnel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jose-garcia86/js-dev-env.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Starter",
+    "Kit",
+    "Development",
+    "Environment"
+  ],
+  "author": "Jose Garcia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jose-garcia86/js-dev-env/issues"
+  },
+  "homepage": "https://github.com/jose-garcia86/js-dev-env#readme",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "express": "^4.17.1",
+    "localtunnel": "^2.0.1",
+    "npm-run-all": "^4.1.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.2",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.2"
+  }
+}
