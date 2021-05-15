@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node ./buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel open:src lint:watch",
+    "start": "npm-run-all --parallel open:src lint:watch test:watch",
     "open:src": "babel-node ./buildScripts/server.js",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel start localtunnel",
     "lint": "esw webpack.config.* src buildScripts --color",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -39,12 +41,16 @@
     "@babel/core": "^7.14.2",
     "@babel/node": "^7.14.2",
     "@babel/preset-env": "^7.14.2",
+    "@babel/register": "^7.13.16",
     "babel-loader": "^8.2.2",
+    "chai": "^4.3.4",
     "css-loader": "^5.2.4",
     "eslint": "^7.26.0",
     "eslint-plugin-import": "^2.23.1",
     "eslint-watch": "^7.0.0",
     "express": "^4.17.1",
+    "jsdom": "^16.5.3",
+    "mocha": "^8.4.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.37.0",
     "webpack-dev-middleware": "^4.2.0"
