@@ -21,6 +21,7 @@ app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '../src/index.html'))
 });
 
+// Run the server on specified Port
 app.listen(port, function(err){
     if(err){
         console.log(err)
